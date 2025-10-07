@@ -3,22 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shoma Moharana | XR Research & Data Visualization</title>
+  <title>Bhagya Moharana | XR Research & Data Visualization</title>
   <meta name="description" content="Bhagya Moharana - Researcher in XR, AI, and Physiological Synchrony. Explore research projects, publications, and teaching contributions.">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="shoma.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="nav-logo">Bhagya Moharana</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <!-- HERO SECTION -->
   <header class="hero">
-    <img src="shoma.jpg" alt="Bhagya Moharana" class="profile-pic" />
-    <h1>Hello, I'm <span class="highlight">Bhagya</span> 👋</h1>
-    <p>Researcher | XR | AI | Physiological Synchrony | Data Visualization</p>
+    <div class="hero-content">
+      <img src="shoma.jpg" alt="Shoma Moharana" class="profile-pic" />
+      <div class="hero-text">
+        <h1>Hello, I'm <span class="highlight">Shoma</span> 👋</h1>
+        <p>
+          Researcher | XR | AI | Physiological Synchrony | Data Visualization
+        </p>
+        <div class="hero-buttons">
+          <a href="#about" class="btn primary">Explore</a>
+          <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank" class="btn secondary">Google Scholar</a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Me</h2>
     <p>
       I'm a researcher focused on <strong>collaborative Virtual Reality (VR)</strong>, 
@@ -28,107 +53,77 @@
     </p>
   </section>
 
-  <!-- RESEARCH PROJECTS -->
-  <section id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
     <h2>Research & Projects</h2>
-    <ul>
-      <li>🧠 <strong>Physiological Synchrony in Collaborative VR</strong> – Investigating heart rate & pupil dilation synchrony to measure team dynamics and mental workload.</li>
-      <li>🎭 <strong>Audience–AI Synchrony</strong> – Analysing engagement in immersive theatre using physiological and motion data.</li>
-      <li>🌊 <strong>Cea-SAR Flood Intelligence Platform</strong> – Forecasting floodplain dynamics with Synthetic Aperture Radar & Google Earth Engine.</li>
-      <li>💬 <strong>Conversational Speech Synchrony</strong> – Studying human–AI emotional alignment in immersive environments.</li>
-    </ul>
+    <div class="cards">
+      <div class="card">🧠 <strong>Physiological Synchrony in Collaborative VR</strong><br>Investigating heart rate & pupil dilation synchrony to measure team dynamics and mental workload.</div>
+      <div class="card">🎭 <strong>Audience–AI Synchrony</strong><br>Analysing engagement in immersive theatre using physiological and motion data.</div>
+      <div class="card">🌊 <strong>Cea-SAR Flood Intelligence Platform</strong><br>Forecasting floodplain dynamics with SAR & Google Earth Engine.</div>
+      <div class="card">💬 <strong>Conversational Speech Synchrony</strong><br>Studying human–AI emotional alignment in immersive environments.</div>
+    </div>
   </section>
-  <!-- SKILLS & EXPERTISE -->
-<section id="skills">
-  <h2>🛠 Skills & Technical Expertise</h2>
 
- <div class="skills-subsection">
-  <h3>1️⃣ VR Prototyping & Development</h3>
-  <p>
-    I design and prototype immersive collaborative VR environments using Unity, integrating physiological data and real-time interaction. 
-    Below are sample demos and GitHub project links:
-  </p>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>🛠 Skills & Technical Expertise</h2>
 
-  <div class="video-gallery">
-    <!-- Closed Room Card -->
-    <div class="video-card">
-      <div class="video-wrapper">
-        <iframe 
-          src="https://drive.google.com/file/d/104fUNe797jsEhIG1RATNRFeoa5Q5NDqf/preview" 
-          allow="autoplay" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <h4>🔒 Closed Room Collaboration</h4>
+    <div class="skills-subsection">
+      <h3>1️⃣ VR Prototyping & Development</h3>
       <p>
-        A scenario where collaborators rely on verbal communication without visual cues, ideal for studying synchrony through physiological signals.
+        I design immersive collaborative VR environments using Unity, integrating physiological data and real-time interaction. 
+        Below are sample demos and GitHub project links:
+      </p>
+
+      <div class="video-gallery">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://drive.google.com/file/d/104fUNe797jsEhIG1RATNRFeoa5Q5NDqf/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <h4>🔒 Closed Room Collaboration</h4>
+          <p>Collaborators rely on verbal communication without visual cues — ideal for studying physiological synchrony.</p>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://drive.google.com/file/d/1Qy9uA12TT7MHtm9zCW3GsCtuCUcc5wa6/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <h4>🌐 Open Room Collaboration</h4>
+          <p>Collaborators see each other as avatars, improving shared spatial understanding in VR.</p>
+        </div>
+      </div>
+
+      <p style="text-align:center; margin-top:1rem;">
+        🔗 <a href="https://github.com/bhagyamoharana" target="_blank"><strong>View VR Projects on GitHub →</strong></a>
       </p>
     </div>
 
-    <!-- Open Room Card -->
-    <div class="video-card">
-      <div class="video-wrapper">
-        <iframe 
-          src="https://drive.google.com/file/d/1Qy9uA12TT7MHtm9zCW3GsCtuCUcc5wa6/preview" 
-          allow="autoplay" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <h4>🌐 Open Room Collaboration</h4>
-      <p>
-        A scenario where collaborators see each other as avatars, improving shared spatial understanding and coordination in VR.
-      </p>
+    <hr>
+
+    <div class="skills-subsection">
+      <h3>2️⃣ Data Science & AI Expertise</h3>
+      <ul>
+        <li>🧠 Sentiment and voice analysis with NLP & LLMs (BERT, VADER, AssemblyAI)</li>
+        <li>📈 Physiological synchrony analysis (HR, Pupil Dilation, EDA)</li>
+        <li>⚡ GPU acceleration with PyTorch & CUDA for model training</li>
+        <li>🎧 Multimodal pipeline integrating voice + physiological signals</li>
+      </ul>
     </div>
-  </div>
-
-  <p style="text-align:center; margin-top:1rem;">
-    🔗 <a href="https://github.com/bhagyamoharana" target="_blank"><strong>View VR Projects on GitHub →</strong></a>
-  </p>
-</div>
-
-  <hr>
-
-  <div class="skills-subsection">
-    <h3>2️⃣ Data Science & AI Expertise</h3>
-    <p>
-      I specialize in **NLP**, **LLMs**, and **multimodal physiological data analysis**, applying techniques in 
-      <strong>PyTorch</strong>, <strong>CUDA</strong>, and <strong>AssemblyAI</strong> for 
-      speech, video, and physiological synchrony studies.
-    </p>
-
-    <ul>
-      <li>🧠 Sentiment and voice analysis with NLP & LLMs (BERT, VADER, AssemblyAI)</li>
-      <li>📈 Physiological synchrony analysis (HR, Pupil Dilation, EDA)</li>
-      <li>⚡ GPU acceleration with PyTorch & CUDA for model training</li>
-      <li>🎧 Multimodal pipeline integrating voice + physiological signals</li>
-    </ul>
-
-    <!-- PDF Embed -->
-    <div class="pdf-container">
-      <iframe 
-        src="TG4 (2).pdf" 
-        width="100%" 
-        height="600px">
-      </iframe>
-    </div>
-    <p><em>Diagram demonstrating clustering analysis, QoE patterns, and data processing pipeline.</em></p>
-  </div>
-</section>
-
+  </section>
 
   <!-- PUBLICATIONS -->
-  <section id="publications">
+  <section id="publications" class="section">
     <h2>Selected Publications</h2>
     <ul>
-      <li><a href="https://ieeexplore.ieee.org/abstract/document/10178661/your_paper_1" target="_blank">Physiological Synchrony in a Collaborative VR Task (IEEE VR 2023)</a></li>
-      <li><a href="https://ieeexplore.ieee.org/abstract/document/10868723/your_paper_2" target="_blank">Role-Specific Physiological Responses in CVE (2024)</a></li>
-      <li><a href="https://ieeexplore.ieee.org/abstract/document/10598261/your_paper_3" target="_blank">Voices Unveiled: QoE in Collaborative VR (2024)</a></li>
+      <li><a href="https://ieeexplore.ieee.org/abstract/document/10178661/" target="_blank">Physiological Synchrony in a Collaborative VR Task (IEEE VR 2023)</a></li>
+      <li><a href="https://ieeexplore.ieee.org/abstract/document/10868723/" target="_blank">Role-Specific Physiological Responses in CVE (2024)</a></li>
+      <li><a href="https://ieeexplore.ieee.org/abstract/document/10598261/" target="_blank">Voices Unveiled: QoE in Collaborative VR (2024)</a></li>
     </ul>
-    <p>📚 View full list on <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank"><strong>Google Scholar</strong></a></p>
+    <p>📚 Full list on <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank"><strong>Google Scholar</strong></a></p>
   </section>
 
-  <!-- TEACHING & ENGAGEMENT -->
-  <section id="teaching">
+  <!-- TEACHING -->
+  <section id="teaching" class="section">
     <h2>Teaching & Engagement</h2>
     <ul>
       <li>👩‍🏫 Lecturer at Pulse College – Teaching Data Structures & Algorithms (C#) and Computer Illustrated Graphics (Adobe Illustrator).</li>
@@ -138,7 +133,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section id="contact" class="section">
     <h2>Contact</h2>
     <p>Let's connect 👇</p>
     <p class="social-links">
@@ -151,8 +146,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Shoma Moharana | Built with ❤️ & Netlify</p>
+    <p>© 2025 Bhagya Moharana | Built with ❤️ & Netlify</p>
   </footer>
 
 </body>
 </html>
+
