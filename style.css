@@ -52,6 +52,57 @@ a:hover {
 .social-links a {
   margin: 0 0.3rem;
 }
+/* Skills Section */
+#skills {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.skills-subsection {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.skills-subsection h3 {
+  color: #4f46e5;
+  margin-top: 1rem;
+}
+
+.skills-subsection p, .skills-subsection ul {
+  line-height: 1.6;
+}
+
+.pdf-container {
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Keep the same video styling */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 
 footer {
   text-align: center;
