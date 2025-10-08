@@ -340,6 +340,21 @@ section ul li {
   margin: 0.4rem 0;
   padding-left: 0;
 }
+#teaching ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+#teaching ul li {
+  margin: 0.6rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
 
 
 /* 🦶 FOOTER */
