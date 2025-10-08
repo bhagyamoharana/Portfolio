@@ -284,6 +284,39 @@ ul {
   transform: translateX(5px);
 }
 
+/* ✅ Center all generic ULs and fix list alignment */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 800px;
+}
+
+/* ✅ Center specific skill / teaching lists nicely */
+#skills ul,
+#teaching ul,
+#publications ul {
+  text-align: left;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+/* ✅ Remove any stray bullets inside sections */
+section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+/* ✅ Ensure list items are consistent */
+section ul li {
+  list-style: none;
+  margin: 0.4rem 0;
+  padding-left: 0;
+}
+
+
 /* 🦶 FOOTER */
 footer {
   text-align: center;
