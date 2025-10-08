@@ -33,62 +33,51 @@ body {
 /* ============= Hero ============= */
 /* ============= Hero ============= */
 .hero {
-  position: relative;
-  background: radial-gradient(1200px 600px at 10% 20%, #7c3aed 0%, transparent 60%),
-              radial-gradient(1000px 600px at 90% 10%, #22d3ee 0%, transparent 60%),
-              linear-gradient(180deg, #4f46e5 0%, #4338ca 100%);
-  color: #eef1ff;
-  overflow: hidden;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  padding: 4rem 1rem;
 }
 
 .hero-inner {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 5.5rem 1rem 4rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: 2rem;
 }
 
 .hero-text {
-  max-width: 600px;
+  flex: 1 1 400px;
   text-align: center;
 }
 
-
-.avatar {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid rgba(255, 255, 255, .6);
-  box-shadow: 0 20px 60px rgba(124, 58, 237, .35), 0 10px 30px rgba(34, 211, 238, .25);
-}
-
-
 .hero-text h1 {
-  font-size: clamp(1.9rem, 3vw, 2.6rem);
-  font-weight: 800;
-  background: linear-gradient(90deg, #a78bfa, #ccfbf1, #f0abfc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .hero-text p {
-  margin-top: .35rem;
-  color: #e0e7ff;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.cta {
-  margin-top: 1rem;
+.hero-image {
+  flex: 0 1 250px;
   display: flex;
   justify-content: center;
-  gap: .7rem;
-  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 
