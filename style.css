@@ -53,6 +53,12 @@ body {
   gap: 2rem;
 }
 
+.hero-text {
+  max-width: 600px;
+  text-align: center;
+}
+
+
 .avatar {
   width: 220px;
   height: 220px;
@@ -62,9 +68,6 @@ body {
   box-shadow: 0 20px 60px rgba(124, 58, 237, .35), 0 10px 30px rgba(34, 211, 238, .25);
 }
 
-.hero-text {
-  max-width: 600px;
-}
 
 .hero-text h1 {
   font-size: clamp(1.9rem, 3vw, 2.6rem);
