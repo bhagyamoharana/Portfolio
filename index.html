@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bhagya Moharana | XR Research & Teaching Portfolio</title>
-  <meta name="description" content="Bhagya Moharana - XR & AI Researcher. Lecturer teaching Unity C# (Single & Multiplayer), Algorithms, and Computer Illustrated Graphics. Explore research, projects, publications, and courses.">
+  <title>Bhagya Moharana | AI/ML · UX Research · VR Prototyping</title>
+  <meta name="description" content="Portfolio of Bhagya (Shoma) Moharana — AI/ML, UX Research (physiological synchrony), and VR prototyping. Unity teaching experience at Pulse College and LOETB.">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="shoma.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,171 +16,249 @@
     <div class="nav-container">
       <span class="nav-logo">Bhagya Moharana</span>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#publications">Publications</a></li>
+        <li><a href="#aiml">AI/ML</a></li>
+        <li><a href="#ux">UX Research</a></li>
+        <li><a href="#vr">VR Prototyping</a></li>
         <li><a href="#teaching">Teaching</a></li>
-        <li><a href="#courses">Courses</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <!-- 🌙 Dark Mode Toggle -->
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
     </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero">
     <div class="hero-content">
-      <img src="shoma.jpg" alt="Shoma Moharana" class="profile-pic" />
+      <img src="shoma.jpg" alt="Bhagya (Shoma) Moharana" class="profile-pic" />
       <div class="hero-text">
-        <h1>Hello, I'm <span class="highlight">Bhagya</span> 👋</h1>
-        <p>Researcher | XR | AI | Physiological Synchrony | Unity Teaching | Data Visualization</p>
+        <h1>AI/ML · UX Research · VR Prototyping</h1>
+        <p>Physiological Synchrony · NLP/LLMs · Unity XR · Multimodal Pipelines</p>
         <div class="hero-buttons">
-          <a href="#about" class="btn primary">Explore</a>
-          <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank" class="btn secondary">Google Scholar</a>
+          <a href="#aiml" class="btn primary">AI & ML</a>
+          <a href="#ux" class="btn secondary">UX Research</a>
+          <a href="#vr" class="btn secondary">VR Prototyping</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
+  <!-- AI/ML (Horizontal Timeline) -->
+  <section id="aiml" class="section">
+    <h2>🧠 AI & Machine Learning</h2>
     <p>
-      I'm a researcher and educator working at the intersection of <strong>collaborative Virtual Reality (VR)</strong>, 
-      <strong>physiological synchrony</strong>, and <strong>user experience</strong>. 
-      My research integrates eye-tracking, heart rate, and sentiment analysis to understand how people collaborate 
-      and engage in immersive XR environments. Alongside research, I teach <strong>Unity C# programming</strong> and 
-      <strong>Computer Illustrated Graphics</strong> to equip learners with practical and creative technical skills.
+      I build multimodal pipelines combining <strong>NLP/LLMs</strong>, <strong>voice & video analytics</strong>, and <strong>physiological signals</strong>.
+      Tooling: <strong>PyTorch</strong>, <strong>CUDA</strong>, <strong>Hugging Face</strong>, and <strong>AssemblyAI</strong>.
     </p>
-  </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2>Research & Projects</h2>
-    <div class="cards">
-      <div class="card">🧠 <strong>Physiological Synchrony in Collaborative VR</strong><br>Investigating heart rate & pupil dilation synchrony to measure team dynamics and mental workload.</div>
-      <div class="card">🎭 <strong>Audience–AI Synchrony</strong><br>Analysing engagement in immersive theatre using physiological and motion data.</div>
-      <div class="card">🌊 <strong>Cea-SAR Flood Intelligence Platform</strong><br>Forecasting floodplain dynamics with SAR & Google Earth Engine.</div>
-      <div class="card">💬 <strong>Conversational Speech Synchrony</strong><br>Studying human–AI emotional alignment in immersive environments.</div>
+    <!-- Tech badges (put logos in /assets/logos/ if you have them) -->
+    <div class="tech-badges">
+      <!-- Place logo files at: assets/logos/pytorch.svg, huggingface.svg, assemblyai.svg -->
+      <span class="badge"><img src="assets/logos/pytorch.svg" alt="PyTorch" onerror="this.parentElement.classList.add('text-badge');this.remove();">PyTorch</span>
+      <span class="badge"><img src="assets/logos/huggingface.svg" alt="Hugging Face" onerror="this.parentElement.classList.add('text-badge');this.remove();">Hugging Face</span>
+      <span class="badge"><img src="assets/logos/assemblyai.svg" alt="AssemblyAI" onerror="this.parentElement.classList.add('text-badge');this.remove();">AssemblyAI</span>
+      <span class="badge text-badge">CUDA</span>
+      <span class="badge text-badge">Python</span>
+    </div>
+
+    <!-- Horizontal timeline -->
+    <div class="h-timeline">
+      <div class="h-step">
+        <div class="h-dot">🎓</div>
+        <h4>PhD Start</h4>
+        <p>Researching QoE in Collaborative VR; define synchrony & UX measures.</p>
+        <span class="h-date">2020</span>
+      </div>
+      <div class="h-step">
+        <div class="h-dot">🤗</div>
+        <h4>NLP & LLMs</h4>
+        <p>Sentiment & topic analysis (BERT/VADER/HF) linked with collaboration quality.</p>
+        <span class="h-date">2021–2022</span>
+      </div>
+      <div class="h-step">
+        <div class="h-dot">🧰</div>
+        <h4>PyTorch + CUDA</h4>
+        <p>GPU-accelerated training; feature extraction from audio/video & biosignals.</p>
+        <span class="h-date">2022–2023</span>
+      </div>
+      <div class="h-step">
+        <div class="h-dot">🎙</div>
+        <h4>AssemblyAI</h4>
+        <p>Voice analytics + diarization; align emotional valence with synchrony.</p>
+        <span class="h-date">2023</span>
+      </div>
+      <div class="h-step">
+        <div class="h-dot">📊</div>
+        <h4>Multimodal Fusion</h4>
+        <p>Integrate HR/PD synchrony + NLP sentiment → robust UX & performance signals.</p>
+        <span class="h-date">2024–2025</span>
+      </div>
+    </div>
+
+    <!-- Optional: show figures from your PDF (export images to assets first) -->
+    <!-- Save images from TG4.pdf as: assets/fig-qoe-trend.png, assets/fig-clusters.png -->
+    <div class="fig-row">
+      <figure class="fig">
+        <img src="assets/fig-qoe-trend.png" alt="QoE Trends" onerror="this.closest('.fig').style.display='none';">
+        <figcaption>QoE trends over time (from thesis figures).</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/fig-clusters.png" alt="Cluster Analysis" onerror="this.closest('.fig').style.display='none';">
+        <figcaption>Cluster analysis reveals structure in QoE & sessions.</figcaption>
+      </figure>
+    </div>
+
+    <!-- Fallback: embed the PDF page(s) if images are not extracted yet -->
+    <div class="pdf-embed">
+      <iframe src="TG4.pdf#page=3" title="PhD Figure (PDF preview)" loading="lazy"></iframe>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <h2>🛠 Skills & Technical Expertise</h2>
+  <!-- UX Research (Vertical Timeline) -->
+  <section id="ux" class="section">
+    <h2>🔬 UX Research (Physiological Synchrony)</h2>
+    <p>
+      I study how <strong>physiological synchrony</strong> (HR, pupil dilation), <strong>voice sentiment</strong>, and
+      <strong>task roles</strong> predict collaboration quality and cognitive load in XR.
+    </p>
 
-    <div class="skills-subsection">
-      <h3>1️⃣ VR Prototyping & Development</h3>
-      <p>
-        I design immersive collaborative VR environments using Unity, integrating physiological data and real-time interaction. 
-        Below are sample demos and GitHub project links:
-      </p>
-
-      <div class="video-gallery">
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/104fUNe797jsEhIG1RATNRFeoa5Q5NDqf/preview" allow="autoplay" allowfullscreen></iframe>
-          </div>
-          <h4>🔒 Closed Room Collaboration</h4>
-          <p>Collaborators rely on verbal communication without visual cues — ideal for studying physiological synchrony.</p>
-        </div>
-
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://drive.google.com/file/d/1Qy9uA12TT7MHtm9zCW3GsCtuCUcc5wa6/preview" allow="autoplay" allowfullscreen></iframe>
-          </div>
-          <h4>🌐 Open Room Collaboration</h4>
-          <p>Collaborators see each other as avatars, improving shared spatial understanding in VR.</p>
+    <div class="timeline alt">
+      <div class="timeline-item">
+        <div class="timeline-date">Study 1 · 2022 → IEEE VR 2023</div>
+        <div class="timeline-content">
+          <h3>Closed Room Collaboration</h3>
+          <ul class="clean-list">
+            <li>Leader vs Follower: stress vs physical load differences (NASA-TLX).</li>
+            <li>Synchrony (HR/PD) correlated with performance & engagement.</li>
+            <li>Introduced sentiment analysis for emotional alignment.</li>
+          </ul>
+          <p class="pub-link">
+            <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10178661/">Paper link</a>
+          </p>
         </div>
       </div>
 
-      <p style="text-align:center; margin-top:1rem;">
-        🔗 <a href="https://github.com/bhagyamoharana" target="_blank"><strong>View VR Projects on GitHub →</strong></a>
-      </p>
-    </div>
-
-    <hr>
-
-    <div class="skills-subsection">
-      <h3>2️⃣ Data Science & AI Expertise</h3>
-      <ul>
-        <li>🧠 Sentiment and voice analysis with NLP & LLMs (BERT, VADER, AssemblyAI)</li>
-        <li>📈 Physiological synchrony analysis (HR, Pupil Dilation, EDA)</li>
-        <li>⚡ GPU acceleration with PyTorch & CUDA for model training</li>
-        <li>🎧 Multimodal pipeline integrating voice + physiological signals</li>
-      </ul>
+      <div class="timeline-item">
+        <div class="timeline-date">Study 2 · 2023–2024 → IEEE VR 2024</div>
+        <div class="timeline-content">
+          <h3>Open vs Closed Collaboration</h3>
+          <ul class="clean-list">
+            <li>68 participants; SiM-TLX, VRNQ, interest/commonality factors.</li>
+            <li>Visibility & role condition effects on synchrony & UX.</li>
+            <li>Multimodal fusion: synchrony + positive sentiment → better collaboration.</li>
+          </ul>
+          <p class="pub-link">
+            <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10868723/">Role-Specific Responses</a> ·
+            <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10598261/">Voices Unveiled</a>
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="publications" class="section">
-    <h2>📄 Selected Publications</h2>
-    <ul class="publication-list">
-      <li><a href="https://ieeexplore.ieee.org/abstract/document/10178661/" target="_blank">Physiological Synchrony in a Collaborative VR Task (2023)</a></li>
-      <li><a href="https://ieeexplore.ieee.org/abstract/document/10868723/" target="_blank">Role-Specific Physiological Responses in CVE (2024)</a></li>
-      <li><a href="https://ieeexplore.ieee.org/abstract/document/10598261/" target="_blank">Voices Unveiled: QoE in Collaborative VR (2024)</a></li>
-    </ul>
-    <p>📚 Full list on 
-      <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank"><strong>Google Scholar</strong></a>
+  <!-- VR Prototyping -->
+  <section id="vr" class="section">
+    <h2>🕶️ VR Prototyping (Unity)</h2>
+    <p>Collaborative VR environments for studying team dynamics and UX in real time.</p>
+
+    <div class="tech-badges">
+      <!-- Put logo files if you have them -->
+      <span class="badge"><img src="assets/logos/unity.svg" alt="Unity" onerror="this.parentElement.classList.add('text-badge');this.remove();">Unity</span>
+      <span class="badge text-badge">C#</span>
+      <span class="badge text-badge">XR Interaction</span>
+      <span class="badge text-badge">Networking</span>
+    </div>
+
+    <div class="video-gallery">
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/104fUNe797jsEhIG1RATNRFeoa5Q5NDqf/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        <h4>🔒 Closed Room Collaboration</h4>
+        <p>Audio-driven coordination; ideal for studying physiological synchrony.</p>
+      </div>
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://drive.google.com/file/d/1Qy9uA12TT7MHtm9zCW3GsCtuCUcc5wa6/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+        <h4>🌐 Open Room Collaboration</h4>
+        <p>Avatar visibility aids spatial awareness and shared task understanding.</p>
+      </div>
+    </div>
+
+    <p class="center" style="margin-top:1rem;">
+      🔗 <a href="https://github.com/bhagyamoharana" target="_blank"><strong>View VR Projects on GitHub →</strong></a>
     </p>
   </section>
 
-  <!-- TEACHING -->
+  <!-- Teaching -->
   <section id="teaching" class="section">
-    <h2>🎓 Teaching & Engagement</h2>
+    <h2>🎓 Teaching</h2>
     <div class="teaching-grid">
       <div class="teaching-card">
         <span>👩‍🏫</span>
-        Lecturer at <strong>Pulse College</strong> – Teaching <strong>Data Structures & Algorithms using Unity C#</strong> with a focus on designing <strong>single-player and multiplayer systems using UNet</strong>.
+        Lecturer at <strong>Pulse College</strong> — <strong>Data Structures & Algorithms in Unity C#</strong>, designing <strong>single-player</strong> and <strong>multiplayer (UNet)</strong> systems.
       </div>
       <div class="teaching-card">
         <span>🖌️</span>
-        Instructor at <strong>LOETB</strong> – Teaching the <strong>Computer Illustrated Graphics module</strong>, introducing Adobe Illustrator and design fundamentals to students.
+        Instructor at <strong>LOETB</strong> — <strong>Computer Illustrated Graphics</strong> (Adobe Illustrator), design foundations & portfolio projects.
       </div>
       <div class="teaching-card">
-        <span>📢</span>
-        Education & Public Engagement – Showcasing VR demos in schools to inspire students about XR and AI.
+        <span>🤝</span>
+        Mentorship — Unity development, multimodal analysis, and research methods.
       </div>
     </div>
-  </section>
 
-  <!-- COURSES TIMELINE -->
-  <section id="courses" class="section">
-    <h2>📅 Courses Taught</h2>
+    <!-- Mini timeline for courses -->
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-date">2025 – Present</div>
         <div class="timeline-content">
-          <h3>Pulse College – Data Structures & Algorithms in Unity (C#)</h3>
-          <p>Teaching Unity-based programming for both single-player and multiplayer systems using UNet, focusing on algorithm design, implementation, and real-time interactions.</p>
+          <h3>Pulse College</h3>
+          <p>Unity C#, algorithms, multiplayer with UNet; project-based learning.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-date">2024 – 2025</div>
         <div class="timeline-content">
-          <h3>LOETB – Computer Illustrated Graphics</h3>
-          <p>Introducing Adobe Illustrator and design thinking principles to learners, helping them develop portfolio-ready creative work.</p>
+          <h3>LOETB</h3>
+          <p>Computer Illustrated Graphics; Adobe Illustrator & design thinking.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- Contact -->
   <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Let's connect 👇</p>
+    <p>Let’s connect 👇</p>
     <p class="social-links">
-      <a href="https://www.linkedin.com/in/shoma-moharana" target="_blank">🔗 LinkedIn</a> |
-      <a href="https://github.com/bhagyamoharana" target="_blank">💻 GitHub</a> |
-      <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank">🎓 Google Scholar</a> |
-      <a href="mailto:your.email@example.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/shoma-moharana" target="_blank">LinkedIn</a> ·
+      <a href="https://github.com/bhagyamoharana" target="_blank">GitHub</a> ·
+      <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank">Google Scholar</a> ·
+      <a href="mailto:your.email@example.com">Email</a>
     </p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2025 Bhagya Moharana | Built with ❤️ & GitHub Pages</p>
   </footer>
 
+  <!-- Dark mode toggle + persist -->
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleButton.textContent = '☀️';
+    }
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      toggleButton.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>
