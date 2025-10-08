@@ -195,3 +195,44 @@ body {
 .clean { list-style: none; margin: .35rem 0 .5rem; padding-left: 0; }
 .clean li { margin: .3rem 0; color: #d7dbff; }
 .link a { color: #9ae6ff; text
+
+         /* ============= VR Video Grid ============= */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.v-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px;
+  padding: 1rem;
+  color: #e9ecff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.v-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+}
+
+.frame {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
