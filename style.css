@@ -31,7 +31,6 @@ body {
 .nav-links .pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,.15); }
 
 /* ============= Hero ============= */
-/* ============= Hero ============= */
 .hero {
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: white;
@@ -39,7 +38,7 @@ body {
 }
 
 .hero-inner {
-  max-width: 1150px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -51,18 +50,23 @@ body {
 
 .hero-text {
   flex: 1 1 400px;
-  text-align: center;
 }
 
 .hero-text h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .hero-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 1.5rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .hero-image {
@@ -72,13 +76,14 @@ body {
 }
 
 .avatar {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
+
 
 
 /* ============= Sections ============= */
