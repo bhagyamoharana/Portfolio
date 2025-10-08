@@ -264,6 +264,31 @@ ul {
   color: #ff9800;
   text-decoration: underline;
 }
+/* 📄 Publications Section */
+.publication-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+.publication-list li {
+  margin: 0.5rem 0;
+}
+
+.publication-list li a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.publication-list li a:hover {
+  color: #ff9800;
+  text-decoration: underline;
+}
+
 
 /* 🧠 SKILLS & TEACHING LISTS */
 #skills ul li,
