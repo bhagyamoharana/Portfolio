@@ -201,6 +201,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 1.5rem;
+  justify-content: center;
+  align-items: start;
   margin-top: 2rem;
 }
 
@@ -211,23 +213,30 @@ body {
   padding: 1rem;
   color: #e9ecff;
   box-shadow: 0 10px 30px rgba(0,0,0,.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
-.v-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,.25);
+.v-card h4 {
+  margin-top: .8rem;
+  font-weight: 700;
+  color: #fff;
 }
 
-.frame {
+.v-card p {
+  font-size: 0.9rem;
+  color: #c9cffc;
+  margin-top: .4rem;
+}
+
+.v-card .frame {
   position: relative;
-  padding-top: 56.25%; /* 16:9 */
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
   overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 0.75rem;
+  border-radius: 8px;
 }
 
-.frame iframe {
+.v-card iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -235,4 +244,27 @@ body {
   height: 100%;
   border: 0;
 }
+/* Hover effects for VR video cards */
+.v-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.v-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.v-card .frame {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.v-card iframe {
+  transition: transform 0.4s ease;
+}
+
+.v-card:hover iframe {
+  transform: scale(1.05);
+}
+
 
