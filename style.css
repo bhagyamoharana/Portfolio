@@ -294,6 +294,66 @@ body {
 .pub-item a:hover {
   text-decoration: underline;
 }
+.hint {
+  font-size: 0.9rem;
+  color: #a0a3c4;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+.pub-year summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.6rem 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e9ecff;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+.pub-year summary::after {
+  content: "▾";
+  transition: transform 0.3s ease;
+}
+
+.pub-year[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+.pub-year summary:hover {
+  color: #9ae6ff;
+}
+
+.pub-item {
+  margin: 0.8rem 0;
+}
+
+.pub-item h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: #ffffff;
+}
+
+.pub-item p {
+  font-size: 0.9rem;
+  color: #b7b9d6;
+  margin-bottom: 0.3rem;
+}
+
+.pub-item a {
+  font-size: 0.9rem;
+  color: #9ae6ff;
+  text-decoration: none;
+}
+
+.pub-item a:hover {
+  text-decoration: underline;
+}
+
 /* ============= Ticker Section ============= */
 /* ============= Ticker Section ============= */
 .ticker {
