@@ -198,19 +198,20 @@ body {
 
          /* ============= VR Video Grid ============= */
 /* VR Section */
+/* ============= VR Video Grid ============= */
 #vr {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 #vr .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
   gap: 1.5rem;
-  max-width: 1100px;
-  margin: 2rem auto;
-  justify-items: center;
+  justify-items: stretch;  /* centers each card in its column */
+  align-items: start;
 }
 
 /* Mobile Responsive */
@@ -220,45 +221,6 @@ body {
   }
 }
 
-/* Video Card Styling */
-.v-card {
-  background: #121212;
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.v-card .frame {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
-  height: 0;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.v-card .frame iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  transition: transform 0.4s ease;
-}
-
-.v-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-.v-card:hover iframe {
-  transform: scale(1.05);
-}
-
-.v-card h4 {
-  margin-top: 0.75rem;
-}
-
+/* Video Card Styling */ .v-card { background: #121212; border-radius: 12px; overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; } .v-card .frame { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; border-radius: 8px; } .v-card .frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; transition: transform 0.4s ease; } .v-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); } .v-card:hover iframe { transform: scale(1.05); } .v-card h4 { margin-top: 0.75rem; }
 
 
