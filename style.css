@@ -295,85 +295,79 @@ body {
   text-decoration: underline;
 }
 /* ============= Ticker Section ============= */
-.ticker-container {
+.ticker {
   overflow: hidden;
-  width: 100%;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
   margin-top: 2rem;
 }
 
-.ticker {
+.ticker-track {
   display: flex;
-  gap: 2rem;
-  white-space: nowrap;
-  animation: tickerScroll 25s linear infinite;
+  gap: 1rem;
+  animation: ticker-scroll 25s linear infinite;
 }
 
 .ticker-item {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 999px;
-  color: #e9ecff;
-  font-weight: 600;
+  flex: 0 0 auto;
   cursor: pointer;
-  transition: background 0.3s;
-  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.ticker-item img {
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .ticker-item:hover {
-  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
 }
 
-@keyframes tickerScroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Repeats for looping */
 }
 
-/* Lightbox Popup */
+/* ============= Lightbox ============= */
 .lightbox {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  z-index: 1000;
   padding: 1rem;
 }
 
-.lightbox-content {
-  background: #1a1a1a;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  position: relative;
-}
-
-.lightbox-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80vh;
   margin-bottom: 1rem;
+  border-radius: 8px;
 }
 
-.lightbox-text {
-  color: #f3f4f6;
-  font-size: 1rem;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 1rem;
-  font-size: 2rem;
+.lightbox-desc {
   color: #fff;
+  font-size: 1rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
   cursor: pointer;
 }
+
 
 
 
