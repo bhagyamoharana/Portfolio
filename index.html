@@ -324,58 +324,55 @@
     </div>
   </section>
 
-  <!-- 🌟 Social & Outreach Highlights -->
-<section id="outreach" class="section alt">
+ <section id="events" class="section">
   <div class="section-head" data-aos="fade-up">
-    <h2>🌟 Social & Outreach Highlights</h2>
-    <p>Some personal milestones & outreach activities — click to view more.</p>
+    <h2>🌍 Social & Community Events</h2>
+    <p>Highlights from mentorship, entrepreneurship, and research outreach.</p>
   </div>
 
-  <div class="ticker-container">
-    <div class="ticker">
-      <div class="ticker-item" 
-           data-images="Spaceapps.jpg,SP1.jpg" 
-           data-text="Mentored at NASA Space Apps Challenge 2023 — Guided XR teams in ideation & prototyping.">
-        🚀 NASA Space Apps Mentor
+  <div class="ticker">
+    <div class="ticker-track">
+      <div class="ticker-item" data-description="🚀 NASA Space Apps Challenge — Mentor">
+        <img src="images/nasa1.jpg" alt="NASA Event 1">
+      </div>
+      <div class="ticker-item" data-description="🚀 NASA Space Apps Challenge — Mentor">
+        <img src="images/nasa2.jpg" alt="NASA Event 2">
       </div>
 
-      <div class="ticker-item" 
-           data-image="google_meetup.jpg" 
-           data-text="Spoke at Google Enterprise XR Meetup 2024 — Shared VRx startup journey.">
-        🎤 Google XR Speaker
+      <div class="ticker-item" data-description="🎓 PhD Viva Defence — Celebrating the milestone">
+        <img src="images/phd1.jpg" alt="PhD Viva 1">
+      </div>
+      <div class="ticker-item" data-description="🎓 PhD Viva Defence — Celebrating the milestone">
+        <img src="images/phd2.jpg" alt="PhD Viva 2">
       </div>
 
-      <div class="ticker-item" 
-           data-image="social_school_xr.jpg" 
-           data-text="Part of Social School XR outreach — Inspiring young minds through VR demos.">
-        🧠 Social School XR
+      <div class="ticker-item" data-description="🚀 Student Inc Entrepreneurship Program">
+        <img src="images/studentinc1.jpg" alt="Student Inc 1">
+      </div>
+      <div class="ticker-item" data-description="🚀 Student Inc Entrepreneurship Program">
+        <img src="images/studentinc2.jpg" alt="Student Inc 2">
       </div>
 
-      <div class="ticker-item" 
-           data-image="student_inc.jpg" 
-           data-text="Selected for Student Inc. Entrepreneurship Programme 2024 — Developing VRx startup for AI-driven collaborative VR.">
-        🎓 Student Inc Entrepreneurship
+      <div class="ticker-item" data-description="💼 Google & Scale Ireland Entrepreneurship Meetup">
+        <img src="images/google1.jpg" alt="Google Event 1">
+      </div>
+      <div class="ticker-item" data-description="💼 Google & Scale Ireland Entrepreneurship Meetup">
+        <img src="images/google2.jpg" alt="Google Event 2">
       </div>
 
-     <div class="ticker-item" 
-     data-images="phd_viva_1.jpg,phd_viva_2.jpg" 
-     data-text="Successfully defended my PhD Viva in June 2025 — officially Dr. Bhagya Moharana 🎉">
-  🥳 PhD Viva Defended
+      <div class="ticker-item" data-description="🧠 Social XR School Participation">
+        <img src="images/socialxr.jpg" alt="Social XR Event">
+      </div>
     </div>
-    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="">
+    <p class="lightbox-desc"></p>
   </div>
 </section>
-
-<!-- Lightbox Modal -->
-<div id="lightbox" class="lightbox">
-  <span id="lightbox-close" class="lightbox-close">&times;</span>
-  <button id="lightbox-prev" class="lightbox-nav prev">&#10094;</button>
-  <img id="lightbox-image" src="" alt="Event Image">
-  <button id="lightbox-next" class="lightbox-nav next">&#10095;</button>
-  <p id="lightbox-text"></p>
-</div>
-
-
 
   <!-- Contact -->
   <section id="contact" class="section contact">
@@ -405,45 +402,31 @@
       offset: 80,
     });
   </script>
-  <script>
-  // Lightbox interaction
- const tickerItems = document.querySelectorAll('.ticker-item');
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightbox-image');
-const lightboxText = document.getElementById('lightbox-text');
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const lightboxDesc = document.querySelector('.lightbox-desc');
+  const closeBtn = document.querySelector('.lightbox .close');
 
-let currentImages = [];
-let currentIndex = 0;
-
-tickerItems.forEach(item => {
-  item.addEventListener('click', () => {
-    currentImages = item.dataset.images.split(',');
-    currentIndex = 0;
-    showImage();
-    lightbox.style.display = 'flex';
+  document.querySelectorAll('.ticker-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lightboxImg.src = item.querySelector('img').src;
+      lightboxDesc.textContent = item.dataset.description;
+      lightbox.style.display = 'flex';
+    });
   });
-});
 
-function showImage() {
-  lightboxImage.src = currentImages[currentIndex].trim();
-  lightboxText.textContent = tickerItems[currentIndex]?.dataset?.text || '';
-}
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
 
-document.getElementById('lightbox-next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % currentImages.length;
-  showImage();
-});
-
-document.getElementById('lightbox-prev').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-  showImage();
-});
-
-document.getElementById('lightbox-close').addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
-
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
 </script>
+
 
 </body>
 </html>
