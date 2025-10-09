@@ -408,29 +408,42 @@
   </script>
   <script>
   // Lightbox interaction
-  const tickerItems = document.querySelectorAll('.ticker-item');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.querySelector('.lightbox-image');
-  const lightboxText = document.querySelector('.lightbox-text');
-  const lightboxClose = document.querySelector('.lightbox-close');
+ const tickerItems = document.querySelectorAll('.ticker-item');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightbox-image');
+const lightboxText = document.getElementById('lightbox-text');
 
-  tickerItems.forEach(item => {
-    item.addEventListener('click', () => {
-      lightboxImage.src = item.getAttribute('data-image');
-      lightboxText.textContent = item.getAttribute('data-text');
-      lightbox.style.display = 'flex';
-    });
-  });
+let currentImages = [];
+let currentIndex = 0;
 
-  lightboxClose.addEventListener('click', () => {
-    lightbox.style.display = 'none';
+tickerItems.forEach(item => {
+  item.addEventListener('click', () => {
+    currentImages = item.dataset.images.split(',');
+    currentIndex = 0;
+    showImage();
+    lightbox.style.display = 'flex';
   });
+});
 
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
-    }
-  });
+function showImage() {
+  lightboxImage.src = currentImages[currentIndex].trim();
+  lightboxText.textContent = tickerItems[currentIndex]?.dataset?.text || '';
+}
+
+document.getElementById('lightbox-next').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  showImage();
+});
+
+document.getElementById('lightbox-prev').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  showImage();
+});
+
+document.getElementById('lightbox-close').addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+
 </script>
 
 </body>
