@@ -295,10 +295,13 @@ body {
   text-decoration: underline;
 }
 /* ============= Ticker Section ============= */
+/* ============= Ticker Section ============= */
 .ticker {
   overflow: hidden;
   position: relative;
   margin-top: 2rem;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .ticker-track {
@@ -310,7 +313,6 @@ body {
 .ticker-item {
   flex: 0 0 auto;
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
 .ticker-item img {
@@ -320,18 +322,20 @@ body {
   border-radius: 8px;
   border: 2px solid rgba(255,255,255,0.2);
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: block;
 }
 
-.ticker-item:hover {
+.ticker-item:hover img {
   transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 @keyframes ticker-scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Repeats for looping */
+  100% { transform: translateX(-50%); }
 }
 
-/* ============= Lightbox ============= */
+/* Lightbox */
 .lightbox {
   display: none;
   position: fixed;
@@ -367,7 +371,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
 
 
 
