@@ -31,6 +31,8 @@
 
 <!-- Hero Section -->
 <section class="hero compact">
+  <canvas id="hero-bg"></canvas>
+
   <div class="hero-container">
     <img src="shoma.jpg" alt="Dr. Bhagyabati Moharana" class="hero-photo">
 
@@ -45,15 +47,15 @@
         Bridging <strong>machine learning</strong>, <strong>UX analytics</strong>, and 
         <strong>multimodal signals</strong> for human-AI collaboration.
       </p>
+
       <div class="cta">
         <a href="#aiml" class="btn primary">Explore My Work</a>
-        <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank" class="btn outline">Google Scholar</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" 
+           target="_blank" class="btn outline">Google Scholar</a>
       </div>
     </div>
   </div>
 </section>
-
-
 
 <!-- 🧠 AI, Machine Learning & Human Data Fusion -->
 <section id="aiml" class="section">
@@ -453,6 +455,47 @@
   });
 </script>
 
+<script>
+const canvas = document.getElementById("hero-bg");
+const ctx = canvas.getContext("2d");
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = document.querySelector(".hero.compact").offsetHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+function createParticles() {
+  particles = [];
+  const count = Math.floor(canvas.width / 25);
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.4 + 0.4,
+      speed: Math.random() * 0.5 + 0.2
+    });
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let p of particles) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0,245,212,0.45)";
+    ctx.fill();
+    p.x += p.speed;
+    if (p.x > canvas.width) p.x = -5;
+  }
+  requestAnimationFrame(animate);
+}
+
+createParticles();
+animate();
+</script>
 
 
 </body>
