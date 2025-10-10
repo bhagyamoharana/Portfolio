@@ -782,6 +782,50 @@ body {
   transform: scale(1.15);
 }
 
+/* ====== UX Research Accordion ====== */
+.ux-accordion {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  margin: 1.5rem auto;
+  max-width: 1000px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.ux-accordion summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #9ae6ff;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.ux-accordion summary::after {
+  content: "▾";
+  transition: transform 0.3s ease;
+}
+
+.ux-accordion[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+.ux-accordion ul {
+  margin-left: 1.2rem;
+  color: #cfd4ff;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.ux-accordion[open] {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border-color: rgba(255,255,255,0.18);
+}
 
 
 
