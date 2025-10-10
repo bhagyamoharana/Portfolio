@@ -763,56 +763,6 @@ body {
   cursor: pointer;
 }
 
-/* ===== Contact Section ===== */
-.section.contact {
-  text-align: center;
-  padding: 4rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: transparent;
-}
-
-.section.contact .section-head h2 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #00f7ff, #00c8ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
-}
-
-.section.contact .section-head p {
-  color: #b8c0e0;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
-
-/* ===== Social Icons ===== */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.social-icons a img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  padding: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-/* Hover effect: glow + cyan tint */
-.social-icons a img:hover {
-  transform: scale(1.15);
-  background: rgba(0, 247, 255, 0.1);
-  box-shadow: 0 0 15px rgba(0, 247, 255, 0.7);
-}
-
-
 
 
 
@@ -941,21 +891,75 @@ body {
   }
 }
 
-/* ===== Key Impact ===== */
-.impact-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #00f7ff, #00c8ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 2.5rem;
-}
+
 
 /* ===== Fade-In Animation ===== */
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(10px);}
   to {opacity: 1; transform: translateY(0);}
 }
+
+
+/* ===== Contact Section ===== */
+.section.contact {
+  text-align: center;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section.contact .section-head h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00f7ff, #00c8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.section.contact .section-head p {
+  color: #b8c0e0;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Contact Links ===== */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-links a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #00e5ff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #00e5ff;
+  transition: width 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.contact-links a:hover::after {
+  width: 100%;
+}
+
 
 
 
