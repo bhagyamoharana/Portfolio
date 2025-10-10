@@ -34,110 +34,112 @@ body {
 /* ============================= */
 /* Hero Section - Collaborative VR Focus */
 /* ============================= */
-/* Compact Hero Section - Collaborative VR Focus */
-.hero {
-  position: relative;
-  overflow: hidden;
+/* === Compact Hero (Professional Research Banner) === */
+.hero.compact {
+  background: linear-gradient(135deg, #0b0d1a, #151933);
   color: #ffffff;
-  background: linear-gradient(135deg, #0b0d1a 0%, #151933 100%);
-  padding: 3.5rem 1rem;
-  text-align: center;
+  padding: 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.hero canvas#hero-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  opacity: 0.25;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
+.hero-container {
+  max-width: 1000px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
-.hero-image img {
+.hero-photo {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 3px solid rgba(255,255,255,0.25);
-  box-shadow: 0 0 20px rgba(0,245,212,0.3);
+  border: 3px solid rgba(255,255,255,0.3);
+  box-shadow: 0 0 15px rgba(0,245,212,0.3);
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
-.hero-image img:hover { transform: scale(1.05); }
 
-.hero-text h1 {
-  font-size: 1.9rem;
+.hero-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 1.8rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #00f5d4, #00b4d8, #90e0ef);
+  background: linear-gradient(90deg, #00f5d4, #00b4d8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
-.hero-subtitle {
-  font-size: 1.05rem;
+.hero-content h3 {
+  font-size: 1rem;
   color: #a3bffa;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
 }
 
-.hero-tagline {
+.hero-content p {
   font-size: 0.95rem;
   color: #d4d6ef;
-  line-height: 1.6;
-  max-width: 620px;
-  margin: 0 auto 1.4rem;
-}
-
-.hero-tagline strong:nth-of-type(2) {
-  color: #00f5d4;
-  font-weight: 700;
-  text-shadow: 0 0 6px rgba(0,245,212,0.4);
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .cta {
   display: flex;
-  justify-content: center;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .btn {
-  padding: 0.6rem 1.3rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 999px;
   font-weight: 600;
+  font-size: 0.9rem;
   text-decoration: none;
   transition: all 0.25s ease;
-  font-size: 0.95rem;
 }
 
 .btn.primary {
   background: linear-gradient(90deg, #00f5d4, #00b4d8);
   color: #0b0d1a;
-  box-shadow: 0 0 12px rgba(0,245,212,0.3);
+  box-shadow: 0 0 10px rgba(0,245,212,0.3);
 }
-.btn.primary:hover { box-shadow: 0 0 20px rgba(0,245,212,0.6); transform: translateY(-2px); }
+.btn.primary:hover {
+  box-shadow: 0 0 20px rgba(0,245,212,0.6);
+  transform: translateY(-2px);
+}
 
 .btn.outline {
   border: 1.5px solid #00f5d4;
   color: #00f5d4;
   background: transparent;
 }
-.btn.outline:hover { background: rgba(0,245,212,0.1); }
+.btn.outline:hover {
+  background: rgba(0,245,212,0.1);
+}
 
+/* Mobile layout */
 @media (max-width: 768px) {
-  .hero { padding: 2.5rem 1rem; }
-  .hero-text h1 { font-size: 1.6rem; }
-  .hero-subtitle { font-size: 0.95rem; }
-  .hero-tagline { font-size: 0.9rem; }
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+  .hero-content h3 {
+    font-size: 0.95rem;
+  }
 }
 
 
