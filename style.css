@@ -34,13 +34,15 @@ body {
 /* ============================= */
 /* Hero Section - Collaborative VR Focus */
 /* ============================= */
+/* Compact Hero Section - Collaborative VR Focus */
 .hero {
   position: relative;
   overflow: hidden;
   color: #ffffff;
-  background: radial-gradient(circle at 30% 20%, #111427, #0b0d1a 80%);
-  padding: 5rem 1rem 4rem;
+  background: linear-gradient(135deg, #0b0d1a 0%, #151933 100%);
+  padding: 3.5rem 1rem;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .hero canvas#hero-bg {
@@ -48,129 +50,94 @@ body {
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.25;
 }
 
 .hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 1100px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
-.hero-text {
-  flex: 1 1 400px;
-  text-align: center;
+.hero-image img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.25);
+  box-shadow: 0 0 20px rgba(0,245,212,0.3);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
+.hero-image img:hover { transform: scale(1.05); }
 
 .hero-text h1 {
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   font-weight: 800;
   background: linear-gradient(90deg, #00f5d4, #00b4d8, #90e0ef);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.05rem;
   color: #a3bffa;
-  margin-bottom: 0.9rem;
-  letter-spacing: 0.4px;
+  margin-bottom: 0.8rem;
 }
 
 .hero-tagline {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
   color: #d4d6ef;
-  margin-bottom: 1.8rem;
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 1.4rem;
 }
 
 .hero-tagline strong:nth-of-type(2) {
   color: #00f5d4;
   font-weight: 700;
-  text-shadow: 0 0 6px rgba(0,245,212,0.5);
+  text-shadow: 0 0 6px rgba(0,245,212,0.4);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .btn {
-  padding: 0.7rem 1.5rem;
+  padding: 0.6rem 1.3rem;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.25s ease;
+  font-size: 0.95rem;
 }
 
 .btn.primary {
   background: linear-gradient(90deg, #00f5d4, #00b4d8);
   color: #0b0d1a;
-  box-shadow: 0 0 15px rgba(0,245,212,0.3);
+  box-shadow: 0 0 12px rgba(0,245,212,0.3);
 }
-
-.btn.primary:hover {
-  box-shadow: 0 0 20px rgba(0,245,212,0.6);
-  transform: translateY(-2px);
-}
+.btn.primary:hover { box-shadow: 0 0 20px rgba(0,245,212,0.6); transform: translateY(-2px); }
 
 .btn.outline {
   border: 1.5px solid #00f5d4;
   color: #00f5d4;
   background: transparent;
 }
-
-.btn.outline:hover {
-  background: rgba(0,245,212,0.1);
-}
-
-.hero-image img {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  border: 4px solid rgba(255,255,255,0.25);
-  box-shadow: 0 0 25px rgba(0,245,212,0.25);
-  transition: transform 0.3s ease;
-}
-
-.hero-image img:hover {
-  transform: scale(1.03);
-}
-
-/* Moving ticker */
-.hero-ticker {
-  margin-top: 1.8rem;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-  font-weight: 600;
-  color: #00f5d4;
-  opacity: 0.9;
-  letter-spacing: 0.5px;
-}
-
-.hero-ticker span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scrollTicker 15s linear infinite;
-}
-
-@keyframes scrollTicker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
+.btn.outline:hover { background: rgba(0,245,212,0.1); }
 
 @media (max-width: 768px) {
-  .hero-text h1 { font-size: 2rem; }
-  .hero-subtitle { font-size: 1rem; }
-  .hero-tagline { font-size: 0.95rem; }
-  .hero-ticker { font-size: 0.9rem; }
+  .hero { padding: 2.5rem 1rem; }
+  .hero-text h1 { font-size: 1.6rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-tagline { font-size: 0.9rem; }
 }
 
 
