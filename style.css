@@ -890,6 +890,32 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Key Impact Section ===== */
+.impact-title {
+  color: #00e5ff; /* your cyan highlight color */
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+ul li {
+  color: #ffffff; /* <-- white font for visibility */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+ul li strong {
+  color: #00f7ff; /* highlight key terms in cyan */
+  font-weight: 600;
+}
 
 
 
