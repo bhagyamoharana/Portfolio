@@ -30,21 +30,41 @@
 
 
 <!-- HERO SECTION -->
-<header class="hero">
+<section class="hero">
+  <canvas id="hero-bg"></canvas>
+
   <div class="hero-inner">
     <div class="hero-text">
-      <h1>AI/ML · UX Research · VR Prototyping</h1>
-      <p>Physiological Synchrony · NLP/LLMs · Unity XR · Multimodal Pipelines</p>
+      <h1>Dr. Bhagyabati Moharana</h1>
+      <h3 class="hero-subtitle">Machine Learning · Statistical Modelling · UX Research</h3>
+      <p class="hero-tagline">
+        PhD in <strong>Human-Computer Interaction</strong> specializing in
+        <strong>Collaborative Virtual Reality (VR)</strong>, 
+        <strong>Physiological Synchrony</strong>, and
+        <strong>Emotion-Aware AI Systems</strong>.  
+        I build data-driven frameworks integrating 
+        <strong>machine learning</strong>, 
+        <strong>UX analytics</strong>, and 
+        <strong>multimodal human signals</strong> to advance 
+        <strong>human-AI collaboration</strong>.
+      </p>
+
       <div class="cta">
-        <a href="#about" class="btn primary">Explore My Work</a>
-        <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank" class="btn secondary">Google Scholar</a>
+        <a href="#aiml" class="btn primary">Explore My Work</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" 
+           target="_blank" class="btn outline">Google Scholar</a>
+      </div>
+
+      <div class="hero-ticker">
+        <span>Collaborative VR · Human-AI Interaction · Multimodal Analytics</span>
       </div>
     </div>
+
     <div class="hero-image">
-      <img src="shoma.jpg" alt="Bhagya Moharana" class="avatar">
+      <img src="avatar.png" alt="Dr. Bhagyabati Moharana" class="avatar">
     </div>
   </div>
-</header>
+</section>
 
 
 <!-- 🧠 AI, Machine Learning & Human Data Fusion -->
@@ -443,6 +463,49 @@
       lightbox.style.display = 'none';
     }
   });
+</script>
+<script>
+const canvas = document.getElementById('hero-bg');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = document.querySelector('.hero').offsetHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+function createParticles() {
+  particles = [];
+  for (let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.8 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3
+    });
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let p of particles) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,245,212,0.4)';
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  }
+  requestAnimationFrame(animate);
+}
+
+createParticles();
+animate();
 </script>
 
 
