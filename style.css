@@ -46,15 +46,33 @@ body {
 }
 
 .hero-container {
+  position: relative;
+  z-index: 1;
   max-width: 1000px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
   text-align: left;
+  margin: 0 auto;              /* centers the container horizontally */
+  padding: 2rem 1rem;          /* adds subtle breathing space */
 }
+.hero.compact {
+  text-align: center;
+}
+
+.hero-content {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+}
+
 
 .hero-photo {
   width: 140px;
