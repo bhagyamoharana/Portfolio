@@ -762,25 +762,59 @@ body {
   color: white;
   cursor: pointer;
 }
-/* ============= Contact Social Icons ============= */
+
+/* ===== Contact Section ===== */
+.section.contact {
+  text-align: center;
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+}
+
+.section.contact .section-head h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00f7ff, #00c8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.section.contact .section-head p {
+  color: #b8c0e0;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Social Icons ===== */
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.social-icons img {
-  width: 32px;
-  height: 32px;
+.social-icons a img {
+  width: 48px;
+  height: 48px;
   object-fit: contain;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1); /* Makes white icons visible on dark bg */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-.social-icons img:hover {
+/* Hover effect: glow + cyan tint */
+.social-icons a img:hover {
   transform: scale(1.15);
+  background: rgba(0, 247, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.7);
 }
+
+
+
+
 
 /* ====== UX Research Accordion ====== */
 /* ===== Section Head (matches AI/ML) ===== */
