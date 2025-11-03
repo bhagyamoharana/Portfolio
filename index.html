@@ -11,57 +11,74 @@
 
   <!-- AOS (Animate On Scroll) CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-  /* ===== LEFT PANEL STYLES ===== */
-.left-panel {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  width: 270px;
-  padding: 0 16px;
-  z-index: 999;
+ /* --- LEFT SIDEBAR (Desktop) --- */
+@media (min-width: 1025px) {
+  .left-panel {
+    position: fixed !important;  /* force fixed */
+    top: 96px;                   /* adjust to your navbar height */
+    left: 0;
+    width: 270px;
+    padding: 0 16px;
+    z-index: 2000;
+  }
+  .left-panel-inner {
+    background: #0e1220;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  }
+  .left-panel h3, .left-panel h4 { color: #11d1b7; margin: 0 0 8px 0; }
+  .left-panel hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 14px 0; }
+
+  .nav-btn {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #11d1b7;
+    color: #07131a;
+    text-decoration: none;
+    box-shadow: 0 5px 12px rgba(17,209,183,0.25);
+    transition: transform .15s ease;
+  }
+  .nav-btn:hover { transform: translateY(-2px); }
+
+  .nav-link { display: inline-block; color: #79e7da; text-decoration: none; font-size: .9rem; margin-top: 6px; }
+  .nav-link:hover { text-decoration: underline; }
+
+  /* make room for the sidebar */
+  .page-with-left-panel { margin-left: 300px; } /* 270 + padding */
 }
-.left-panel-inner {
-  background: #0e1220;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
+/* --- Mobile/Tablet: collapse to bottom bar --- */
+@media (max-width: 1024px) {
+  .left-panel {
+    position: fixed !important;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    padding: 0;
+    z-index: 2000;
+  }
+  .left-panel-inner {
+    display: flex;
+    gap: 8px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 10px;
+    background: #0e1220;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  }
+  .left-panel h3, .left-panel h4, .left-panel hr { display: none; }
+  .nav-btn { font-size: .8rem; padding: 8px 10px; margin: 0; }
+  .page-with-left-panel { margin-left: 0 !important; }
 }
-.left-panel h3, .left-panel h4 {
-  color: #11d1b7;
-  margin: 0 0 8px 0;
-}
-.left-panel hr {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin: 14px 0;
-}
-.nav-btn {
-  display: block;
-  text-align: center;
-  font-weight: 600;
-  padding: 10px 12px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background: #11d1b7;
-  color: #07131a;
-  text-decoration: none;
-  box-shadow: 0 5px 12px rgba(17,209,183,0.25);
-  transition: all 0.15s ease;
-}
-.nav-btn:hover {
-  transform: translateY(-2px);
-  background: #18e6ca;
-}
-.nav-link {
-  display: inline-block;
-  color: #79e7da;
-  text-decoration: none;
-  font-size: 0.9rem;
-  margin-top: 6px;
-}
-.nav-link:hover { text-decoration: underline; }
-.page-with-left-panel { margin-left: 300px; }
+
 
 /* Tags */
 .tag-grid {
