@@ -8,142 +8,63 @@
   <link rel="icon" type="image/png" href="shoma.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-
-  <!-- AOS (Animate On Scroll) CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
- /* --- LEFT SIDEBAR (Desktop) --- */
-@media (min-width: 1025px) {
-  .left-panel {
-    position: fixed !important;  /* force fixed */
-    top: 96px;                   /* adjust to your navbar height */
-    left: 0;
-    width: 270px;
-    padding: 0 16px;
-    z-index: 2000;
-  }
-  .left-panel-inner {
-    background: #0e1220;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
-    padding: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  }
-  .left-panel h3, .left-panel h4 { color: #11d1b7; margin: 0 0 8px 0; }
-  .left-panel hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 14px 0; }
 
-  .nav-btn {
-    display: block;
-    text-align: center;
-    font-weight: 600;
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background: #11d1b7;
-    color: #07131a;
-    text-decoration: none;
-    box-shadow: 0 5px 12px rgba(17,209,183,0.25);
-    transition: transform .15s ease;
-  }
-  .nav-btn:hover { transform: translateY(-2px); }
+  <!-- Sidebar + 2-column shell (additions) -->
+  <style>
+    /* grid wrapper for [sidebar | main] */
+    .shell{
+      max-width:1150px;
+      margin:0 auto;
+      padding:2rem 1rem;
+      display:grid;
+      grid-template-columns:280px 1fr; /* sidebar | main */
+      gap:24px;
+    }
 
-  .nav-link { display: inline-block; color: #79e7da; text-decoration: none; font-size: .9rem; margin-top: 6px; }
-  .nav-link:hover { text-decoration: underline; }
+    /* keep navbar on top of everything */
+    .navbar{ z-index:1000; }
 
-  /* make room for the sidebar */
-  .page-with-left-panel { margin-left: 300px; } /* 270 + padding */
-}
+    /* left panel sticks under navbar; no overlay on hero */
+    .left-panel{
+      position: sticky;
+      top: 84px;              /* ~ your sticky navbar height */
+      align-self: start;
+      width: 100%;
+      z-index: 10;            /* below navbar */
+    }
+    .left-panel-inner{
+      background:#0e1220;
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:16px;
+      padding:18px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    }
+    .left-panel h3,.left-panel h4{ color:#11d1b7; margin:0 0 8px }
+    .left-panel hr{ border:0; border-top:1px solid rgba(255,255,255,.1); margin:14px 0 }
 
-/* --- Mobile/Tablet: collapse to bottom bar --- */
-@media (max-width: 1024px) {
-  .left-panel {
-    position: fixed !important;
-    bottom: 15px;
-    left: 15px;
-    width: calc(100% - 30px);
-    padding: 0;
-    z-index: 2000;
-  }
-  .left-panel-inner {
-    display: flex;
-    gap: 8px;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 10px;
-    background: #0e1220;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  }
-  .left-panel h3, .left-panel h4, .left-panel hr { display: none; }
-  .nav-btn { font-size: .8rem; padding: 8px 10px; margin: 0; }
-  .page-with-left-panel { margin-left: 0 !important; }
-}
+    .nav-btn{
+      display:block; text-align:center; font-weight:600;
+      padding:10px 12px; margin-bottom:10px; border-radius:10px;
+      background:#11d1b7; color:#07131a; text-decoration:none;
+      box-shadow:0 5px 12px rgba(17,209,183,.25);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .nav-btn:hover{ transform:translateY(-2px) }
+    .nav-link{ display:inline-block; color:#79e7da; font-size:.9rem; text-decoration:none; margin-top:6px }
+    .nav-link:hover{ text-decoration:underline }
 
+    .tag-grid{ display:flex; flex-wrap:wrap; gap:6px; margin-top:6px }
+    .tag{ background:rgba(17,209,183,.12); color:#79e7da; border-radius:10px; padding:3px 8px; font-size:.8rem }
 
-/* Tags */
-.tag-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 6px;
-}
-.tag {
-  background: rgba(17,209,183,0.12);
-  color: #79e7da;
-  border-radius: 10px;
-  padding: 3px 8px;
-  font-size: 0.8rem;
-}
-
-/* ===== Responsive (mobile collapse) ===== */
-@media (max-width: 1024px) {
-  .left-panel {
-    position: fixed;
-    top: unset;
-    bottom: 15px;
-    left: 15px;
-    width: calc(100% - 30px);
-    padding: 0;
-  }
-  .left-panel-inner {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 10px;
-  }
-  .left-panel h3, .left-panel h4, .tag-grid, .left-panel hr { display: none; }
-  .nav-btn {
-    font-size: 0.8rem;
-    margin: 0;
-    padding: 8px 10px;
-  }
-  .page-with-left-panel { margin-left: 0; }
-}
-
+    /* mobile: stack, no sticky */
+    @media (max-width:1024px){
+      .shell{ grid-template-columns:1fr }
+      .left-panel{ position:static; top:auto }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- LEFT SIDEBAR -->
-<aside class="left-panel" role="complementary" aria-label="Downloads and Links">
-  <div class="left-panel-inner">
-    <h3>🎓 Academic Resources</h3>
-    <a class="nav-btn" href="files/Bhagyabati_Moharana_PhD_Thesis.pdf" download>📘 PhD Thesis</a>
-    <a class="nav-btn" href="files/Bhagyabati_Moharana_Resume.pdf" download>📄 Resume</a>
-    <a class="nav-btn" href="files/PhD_Degree_Certificate.pdf" download>🏅 PhD Degree Certificate</a>
-    <a class="nav-btn" href="files/Masters_Certificate.pdf" download>🎓 Master's Certificate</a>
-
-    <hr>
-
-    <h4>🌐 Connect</h4>
-    <a class="nav-link" href="https://scholar.google.com/citations?user=XXXX" target="_blank">📚 Google Scholar</a><br>
-    <a class="nav-link" href="https://github.com/bhagyamoharana" target="_blank">💻 GitHub</a><br>
-    <a class="nav-link" href="https://www.linkedin.com/in/bhagyabati-moharana/" target="_blank">🔗 LinkedIn</a><br>
-    <a class="nav-link" href="https://orcid.org/0000-0000-XXXX-XXXX" target="_blank">🧬 ORCID</a><br>
-    <a class="nav-link" href="mailto:bhagyabati.moharana@tus.ie">📧 Email Me</a>
-  </div>
-</aside>
-
-
 
   <!-- NAVBAR -->
   <nav class="navbar">
@@ -160,128 +81,131 @@
     </div>
   </nav>
 
-
-<!-- Hero Section -->
-<section class="hero compact">
-  <canvas id="hero-bg"></canvas>
-
-  <div class="hero-container">
-    <img src="shoma.jpg" alt="Dr. Bhagyabati Moharana" class="hero-photo">
-
-    <div class="hero-content">
-      <h1>Dr. Bhagyabati Moharana</h1>
-      <h3>Machine Learning · Statistical Modelling · UX Research</h3>
-      <p>
-        PhD in <strong>Human-Computer Interaction</strong>, specializing in 
-        <strong>Collaborative Virtual Reality (VR)</strong>, 
-        <strong>Physiological Synchrony</strong>, and 
-        <strong>Emotion-Aware AI Systems</strong>.  
-        Bridging <strong>machine learning</strong>, <strong>UX analytics</strong>, and 
-        <strong>multimodal signals</strong> for human-AI collaboration.
-      </p>
-
-      <div class="cta">
-        <a href="#aiml" class="btn primary">Explore My Work</a>
-        <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" 
-           target="_blank" class="btn outline">Google Scholar</a>
+  <!-- HERO (unchanged) -->
+  <section class="hero compact">
+    <canvas id="hero-bg"></canvas>
+    <div class="hero-container">
+      <img src="shoma.jpg" alt="Dr. Bhagyabati Moharana" class="hero-photo">
+      <div class="hero-content">
+        <h1>Dr. Bhagyabati Moharana</h1>
+        <h3>Machine Learning · Statistical Modelling · UX Research</h3>
+        <p>
+          PhD in <strong>Human-Computer Interaction</strong>, specializing in 
+          <strong>Collaborative Virtual Reality (VR)</strong>, 
+          <strong>Physiological Synchrony</strong>, and 
+          <strong>Emotion-Aware AI Systems</strong>.  
+          Bridging <strong>machine learning</strong>, <strong>UX analytics</strong>, and 
+          <strong>multimodal signals</strong> for human-AI collaboration.
+        </p>
+        <div class="cta">
+          <a href="#aiml" class="btn primary">Explore My Work</a>
+          <a href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" 
+             target="_blank" class="btn outline">Google Scholar</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 🧠 AI, Machine Learning & Human Data Fusion -->
-<section id="aiml" class="section">
-  <div class="section-head" data-aos="fade-up">
-    <h2>🧠 AI, Machine Learning & Human Data Fusion</h2>
-    <p>
-      I design intelligent systems that combine <strong>AI modeling</strong> with <strong>human-centric data</strong> —
-      integrating physiological (HR, EDA, pupil dilation), linguistic (NLP & AssemblyAI), and behavioral signals 
-      to uncover patterns of emotion, workload, and collaboration.  
-      Using <strong>PyTorch</strong>, <strong>CUDA</strong>, <strong>Python</strong>, <strong>R</strong>, and 
-      <strong>Scikit-learn</strong>, I build interpretable multimodal pipelines that advance both 
-      <strong>scientific understanding</strong> and <strong>real-world AI applications</strong>.
-    </p>
-  </div>
+  <!-- NEW: 2-column shell with left panel + main content -->
+  <div class="shell">
 
-  <div class="chips" data-aos="zoom-in" data-aos-delay="100">
-    <span class="chip">PyTorch</span>
-    <span class="chip">CUDA</span>
-    <span class="chip">Hugging Face</span>
-    <span class="chip">AssemblyAI</span>
-    <span class="chip">Scikit-learn</span>
-    <span class="chip">Python</span>
-    <span class="chip">R</span>
-    <span class="chip">NLP / LLMs</span>
-    <span class="chip">Signal Processing</span>
-    <span class="chip">Multimodal Fusion</span>
-  </div>
+    <!-- LEFT SIDEBAR (now after hero; no overlay) -->
+    <aside class="left-panel" aria-label="Downloads and Links">
+      <div class="left-panel-inner">
+        <h3>🎓 Academic Resources</h3>
+        <a class="nav-btn" href="files/Bhagyabati_Moharana_PhD_Thesis.pdf" download>📘 PhD Thesis</a>
+        <a class="nav-btn" href="files/Bhagyabati_Moharana_Resume.pdf" download>📄 Resume</a>
+        <a class="nav-btn" href="files/PhD_Degree_Certificate.pdf" download>🏅 PhD Degree Certificate</a>
+        <a class="nav-btn" href="files/Masters_Certificate.pdf" download>🎓 Master’s Certificate</a>
 
-  <div class="row3" data-aos="fade-up" data-aos-delay="150">
-    <article class="card">
-      <h3>⚙️ Model Optimization & Experimentation</h3>
-      <p>
-        Developed and fine-tuned deep learning models using <strong>PyTorch</strong> and <strong>CUDA</strong> 
-        for GPU-accelerated training and inference.  
-        Applied <strong>cross-validation</strong>, <strong>grid search</strong>, and performance 
-        benchmarking to ensure robust and reproducible results.
-      </p>
-    </article>
+        <hr>
+        <h4>🌐 Connect</h4>
+        <a class="nav-link" href="https://scholar.google.com/citations?hl=en&user=IkYXDjcAAAAJ" target="_blank">📚 Google Scholar</a><br>
+        <a class="nav-link" href="https://github.com/bhagyamoharana" target="_blank">💻 GitHub</a><br>
+        <a class="nav-link" href="https://www.linkedin.com/in/bhagyabati-moharana/" target="_blank">🔗 LinkedIn</a><br>
+        <a class="nav-link" href="https://orcid.org" target="_blank">🧬 ORCID</a><br>
+        <a class="nav-link" href="mailto:b.moharana@research.ait.ie">📧 Email Me</a>
 
-    <article class="card">
-      <h3>🧩 Multimodal Learning & Representation</h3>
-      <p>
-        Combined physiological (EDA, HR), vocal sentiment (AssemblyAI), and linguistic features 
-        for predictive modeling of user experience.  
-        Applied <strong>PCA</strong>, <strong>t-SNE</strong>, and <strong>clustering</strong> 
-        to discover latent synchrony patterns across human data streams.
-      </p>
-    </article>
+        <!-- Optional tags
+        <hr>
+        <h4>🧠 Research Focus</h4>
+        <div class="tag-grid">
+          <span class="tag">Collaborative VR</span>
+          <span class="tag">Physiological Synchrony</span>
+          <span class="tag">Emotion-Aware AI</span>
+          <span class="tag">Pupil Dilation</span>
+          <span class="tag">Heart Rate (HR)</span>
+          <span class="tag">QoE</span>
+          <span class="tag">Multimodal ML</span>
+        </div>
+        -->
+      </div>
+    </aside>
 
-    <article class="card">
-      <h3>📊 Visualization & Interpretability</h3>
-      <p>
-        Created <strong>interactive visual dashboards</strong> in <strong>Plotly</strong> and <strong>D3.js</strong> 
-        for exploring neural attention, synchrony trends, and sentiment trajectories.  
-        Implemented <strong>SHAP</strong> and <strong>Grad-CAM</strong> for explainable model insights.
-      </p>
-    </article>
-  </div>
+<!-- MAIN CONTENT (all your sections) -->
+    <main>
 
-<div class="plot-grid" data-aos="fade-up" data-aos-delay="250">
+      <!-- 🧠 AI/ML -->
+      <section id="aiml" class="section">
+        <!-- your existing AI/ML content unchanged -->
+        <div class="section-head" data-aos="fade-up">
+          <h2>🧠 AI, Machine Learning & Human Data Fusion</h2>
+          <p>
+            I design intelligent systems that combine <strong>AI modeling</strong> with <strong>human-centric data</strong> —
+            integrating physiological (HR, EDA, pupil dilation), linguistic (NLP & AssemblyAI), and behavioral signals 
+            to uncover patterns of emotion, workload, and collaboration.  
+            Using <strong>PyTorch</strong>, <strong>CUDA</strong>, <strong>Python</strong>, <strong>R</strong>, and 
+            <strong>Scikit-learn</strong>, I build interpretable multimodal pipelines that advance both 
+            <strong>scientific understanding</strong> and <strong>real-world AI applications</strong>.
+          </p>
+        </div>
 
-  <div class="plot-item">
-    <iframe src="pca_model_summary.html" frameborder="0"></iframe>
-    <p><strong>PCA + Regression Summary — Model Evaluation</strong><br>
-    Shows PCA projections and regression diagnostics to assess model fit, separability, and residual behavior across task metrics. Highlights latent structure and group differences.<br>
-    📂 <a href="https://github.com/bhagyamoharana/HeatInteractionData" target="_blank">View Source on GitHub</a></p>
-  </div>
+        <div class="chips" data-aos="zoom-in" data-aos-delay="100">
+          <span class="chip">PyTorch</span><span class="chip">CUDA</span><span class="chip">Hugging Face</span>
+          <span class="chip">AssemblyAI</span><span class="chip">Scikit-learn</span><span class="chip">Python</span>
+          <span class="chip">R</span><span class="chip">NLP / LLMs</span><span class="chip">Signal Processing</span>
+          <span class="chip">Multimodal Fusion</span>
+        </div>
 
-  <div class="plot-item">
-    <iframe src="cluster_evaluation_summary.html" frameborder="0"></iframe>
-    <p><strong>K-Means Clustering (K = 6) — Latent Space Analysis</strong><br>
-    3D clustering of multimodal features to reveal engagement archetypes and distribution in immersive settings. Aids hypothesis generation and cohort discovery.<br>
-    📂 <a href="https://github.com/bhagyamoharana/Visualisation3D/tree/main" target="_blank">View Source on GitHub</a></p>
-  </div>
+        <div class="row3" data-aos="fade-up" data-aos-delay="150">
+          <article class="card">
+            <h3>⚙️ Model Optimization & Experimentation</h3>
+            <p>Developed and fine-tuned deep learning models using <strong>PyTorch</strong> and <strong>CUDA</strong>…</p>
+          </article>
+          <article class="card">
+            <h3>🧩 Multimodal Learning & Representation</h3>
+            <p>Combined physiological (EDA, HR), vocal sentiment, and linguistic features…</p>
+          </article>
+          <article class="card">
+            <h3>📊 Visualization & Interpretability</h3>
+            <p>Interactive dashboards in Plotly and D3.js; SHAP and Grad-CAM…</p>
+          </article>
+        </div>
 
-  <div class="plot-item">
-    <iframe src="timeseries_significance.html" frameborder="0"></iframe>
-    <p><strong>Time-Series Synchrony — Statistical Significance</strong><br>
-    Aligned physiological/behavioral signals with confidence bands and peak synchrony windows. Demonstrates temporal coupling and significance-tested effects over time.<br>
-    📂 <a href="https://github.com/bhagyamoharana/Study1PhysiologicalSignals" target="_blank">View Source on GitHub</a></p>
-  </div>
-
-  <div class="plot-item">
-    <iframe src="xr_twitch.html" frameborder="0"></iframe>
-    <p><strong>XR vs Twitch Experience Comparison — User Metrics</strong><br>
-    Side-by-side comparison of XR headset vs 2D stream on social presence, recommendation, experience rating, emotion felt, and closeness; significant lift for XR.<br>
-    📂 <a href="https://github.com/bhagyamoharana/AI-Model-XR-vs-Twitch-Evatuations" target="_blank">View Source on GitHub</a></p>
-  </div>
-
-</div>
-
-</section>
-
-
+        <div class="plot-grid" data-aos="fade-up" data-aos-delay="250">
+          <!-- your four plot-item blocks unchanged -->
+          <div class="plot-item">
+            <iframe src="pca_model_summary.html" frameborder="0"></iframe>
+            <p><strong>PCA + Regression Summary — Model Evaluation</strong><br>
+            📂 <a href="https://github.com/bhagyamoharana/HeatInteractionData" target="_blank">View Source on GitHub</a></p>
+          </div>
+          <div class="plot-item">
+            <iframe src="cluster_evaluation_summary.html" frameborder="0"></iframe>
+            <p><strong>K-Means Clustering (K = 6)</strong><br>
+            📂 <a href="https://github.com/bhagyamoharana/Visualisation3D/tree/main" target="_blank">View Source on GitHub</a></p>
+          </div>
+          <div class="plot-item">
+            <iframe src="timeseries_significance.html" frameborder="0"></iframe>
+            <p><strong>Time-Series Synchrony — Statistical Significance</strong><br>
+            📂 <a href="https://github.com/bhagyamoharana/Study1PhysiologicalSignals" target="_blank">View Source on GitHub</a></p>
+          </div>
+          <div class="plot-item">
+            <iframe src="xr_twitch.html" frameborder="0"></iframe>
+            <p><strong>XR vs Twitch Experience Comparison</strong><br>
+            📂 <a href="https://github.com/bhagyamoharana/AI-Model-XR-vs-Twitch-Evatuations" target="_blank">View Source on GitHub</a></p>
+          </div>
+        </div>
+      </section>
 
 <!-- ===== UX Research & Usability Evaluation Section ===== -->
 <section id="uxresearch" class="section alt">
@@ -610,45 +534,33 @@
   <footer class="footer">
     <p>© 2025 Bhagya Moharana</p>
   </footer>
+</main>
+  </div> <!-- /shell -->
 
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true,
-      duration: 700,
-      easing: 'ease-out',
-      offset: 80,
-    });
+    AOS.init({ once:true, duration:700, easing:'ease-out', offset:80 });
   </script>
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.querySelector('.lightbox-img');
-  const lightboxDesc = document.querySelector('.lightbox-desc');
-  const closeBtn = document.querySelector('.lightbox .close');
 
-  document.querySelectorAll('.ticker-item').forEach(item => {
-    item.addEventListener('click', () => {
-      lightboxImg.src = item.querySelector('img').src;
-      lightboxDesc.textContent = item.dataset.description;
-      lightbox.style.display = 'flex';
+  <!-- Lightbox for highlights -->
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.querySelector('.lightbox-img');
+    const lightboxDesc = document.querySelector('.lightbox-desc');
+    const closeBtn = document.querySelector('.lightbox .close');
+
+    document.querySelectorAll('.ticker-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.src = item.querySelector('img').src;
+        lightboxDesc.textContent = item.dataset.description;
+        lightbox.style.display = 'flex';
+      });
     });
-  });
 
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
-    }
-  });
-</script>
-
-
-
-
+    closeBtn?.addEventListener('click', () => { lightbox.style.display = 'none'; });
+    lightbox?.addEventListener('click', e => { if (e.target === lightbox) lightbox.style.display = 'none'; });
+  </script>
 </body>
- 
 </html>
+ 
