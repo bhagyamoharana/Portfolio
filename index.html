@@ -11,6 +11,98 @@
 
   <!-- AOS (Animate On Scroll) CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  /* ===== LEFT PANEL STYLES ===== */
+.left-panel {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 270px;
+  padding: 0 16px;
+  z-index: 999;
+}
+.left-panel-inner {
+  background: #0e1220;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+.left-panel h3, .left-panel h4 {
+  color: #11d1b7;
+  margin: 0 0 8px 0;
+}
+.left-panel hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin: 14px 0;
+}
+.nav-btn {
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #11d1b7;
+  color: #07131a;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(17,209,183,0.25);
+  transition: all 0.15s ease;
+}
+.nav-btn:hover {
+  transform: translateY(-2px);
+  background: #18e6ca;
+}
+.nav-link {
+  display: inline-block;
+  color: #79e7da;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+.nav-link:hover { text-decoration: underline; }
+.page-with-left-panel { margin-left: 300px; }
+
+/* Tags */
+.tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.tag {
+  background: rgba(17,209,183,0.12);
+  color: #79e7da;
+  border-radius: 10px;
+  padding: 3px 8px;
+  font-size: 0.8rem;
+}
+
+/* ===== Responsive (mobile collapse) ===== */
+@media (max-width: 1024px) {
+  .left-panel {
+    position: fixed;
+    top: unset;
+    bottom: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    padding: 0;
+  }
+  .left-panel-inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 10px;
+  }
+  .left-panel h3, .left-panel h4, .tag-grid, .left-panel hr { display: none; }
+  .nav-btn {
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 8px 10px;
+  }
+  .page-with-left-panel { margin-left: 0; }
+}
+
 </head>
 <body>
 
